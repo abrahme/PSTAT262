@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from typing import Dict, List, Tuple, Set
 
 
-
 class IsingLattice(object):
     """
     ising model lattice
@@ -118,7 +117,7 @@ if __name__ == "__main__":
     lattice = -1 * np.ones((lattice_size, lattice_size))
     time_steps = 200
     results = dict()
-    for T in range(1,9):
+    for T in range(1, 9):
         ising = IsingLattice(lattice, T)
         magnetization = []
         for time_step in range(time_steps):
@@ -127,12 +126,10 @@ if __name__ == "__main__":
         results[T] = magnetization
 
     for T in results:
-        plt.plot(range(0,200),results[T],label = f"T = {T}")
+        plt.plot(range(0, time_steps), results[T], label=f"T = {T}")
 
     plt.xlabel('Time Steps')
     plt.ylabel('Magnetization')
     plt.title(f'Magnetization over Time, {lattice_size} by {lattice_size} Lattice')
     plt.legend()
     plt.show()
-
-
