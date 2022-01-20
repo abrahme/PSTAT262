@@ -42,7 +42,7 @@ def blum_blum_shub(n: int, seq_length: int) -> List[int]:
 
     primes = sieve_of_eratosthenes(n)
     blum_primes = find_blum_primes(primes)
-    blum_n = blum_primes[-1] * blum_primes[-2]
+    blum_n = blum_primes[-1] * blum_primes[-2]  ### p x q
     seed = random.choice(range(1, blum_n))
     x_i = (seed ** 2) % blum_n
     parities = [x_i % 2]
@@ -56,4 +56,4 @@ def blum_blum_shub(n: int, seq_length: int) -> List[int]:
 
 
 if __name__ == "__main__":
-    print(len(blum_blum_shub(10000, 100)))
+    print(blum_blum_shub(10000, 100))
