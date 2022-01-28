@@ -84,6 +84,6 @@ class HyperCube(object):
 
 if __name__ == "__main__":
     cube = HyperCube(500)
-    print(cube.estimate_annulus_volume(.05, 10000))
-    print(cube.estimate_meridian_volume(.05, 10000))
-    print(cube.estimate_intersection_meridian_annulus(.05,10000))
+    print(cube.estimate_annulus_volume(.05, 1000000))
+    print(cube.estimate_meridian_volume(.05, 1000000))
+    print(cube.estimate_intersection_meridian_annulus(.05,1000000))

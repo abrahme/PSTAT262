@@ -36,15 +36,16 @@ if __name__ == "__main__":
     true_value = 1 / 3
     midpoint_value = []
     trapezoid_value = []
+    a = 0
+    b = 10 ** 5
     for i in range(1, 5):
         n = 10 ** i
-        midpoint_value.append(midpoint_rule(0, 1, n, lambda x: x ** 2))
-        trapezoid_value.append(trapezoid_rule(0, 1, n, lambda x: x ** 2))
-
+        midpoint_value.append(midpoint_rule(0, 1, n, lambda x: np.exp(-((b-a)*x + a)) * (b - a)))
+        trapezoid_value.append(trapezoid_rule(0, 1, n, lambda x: np.exp(-((b-a)*x + a)) * (b - a)))
     plt.plot([10 ** i for i in range(1, 5)], trapezoid_value, label = "trapezoid")
     plt.plot([10 ** i for i in range(1, 5)], midpoint_value, label = "midpoint")
     plt.xlabel("Number of Design Points")
     plt.ylabel("Estimate of Integral")
-    plt.title("Estimate of x^2 on [0,1]")
+    plt.title("Estimate of e^-x on [0,10000]")
     plt.legend()
     plt.show()
