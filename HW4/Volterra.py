@@ -4,7 +4,7 @@ from numpy.random import choice, exponential
 from typing import Tuple
 
 
-class Volterra(object):
+class StochasticVolterra(object):
     """
     the stochastic volterra model
     """
@@ -63,7 +63,7 @@ if __name__ == "__main__":
     rabbits = []
     wolves = []
     times = []
-    volterra = Volterra(a, b, g, start_state)
+    volterra = StochasticVolterra(a, b, g, start_state)
     for j in range(iterations):
         if sum(volterra.state == 0) > 0:
             break
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     plt.plot(times, rabbits)
     plt.plot(times, wolves)
     plt.legend(["Rabbits", "Wolves"])
-    plt.title(f"Voletrra Model with alpha:{a}, beta:{b}, gamma: {g}")
+    plt.title(f"Stochastic Voletrra Model with alpha:{a}, beta:{b}, gamma: {g}")
     plt.xlabel("Time (years)")
     plt.ylabel("Population")
     plt.show()
@@ -83,5 +83,5 @@ if __name__ == "__main__":
     plt.plot(rabbits,wolves)
     plt.xlabel("Rabbits")
     plt.ylabel("Wolves")
-    plt.title(f"Voletrra Model with alpha:{a}, beta:{b}, gamma: {g}")
+    plt.title(f"Stochastic Voletrra Model with alpha:{a}, beta:{b}, gamma: {g}")
     plt.show()
